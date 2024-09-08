@@ -1,5 +1,11 @@
 # MBC5 Variant
 
+This board is for the MBC5 version.
+
+## Board Characteristics and Order Information
+
+Stuff.
+
 ## Bill of Materials (BOM)
 
 | Reference | Value/Part Number     | Package             | Description             | Group | Source                                                       |
