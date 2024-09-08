@@ -90,7 +90,7 @@ Stuff.
 | J1        | 610106249121          | 2x3, 2.54mm spacing, right angle | Programming header          | https://mou.sr/3XygS4Z                                       |
 | J2        | G800WC306018EU        | 1x2, 2.54mm spacing              | Header pins (structural)    | https://mou.sr/3yXak6E                                       |
 | J3        | 2MM-HB-D03-VT-02-H-TB | 2x3, 2mm spacing                 | Header pins (link port PCB) | https://mou.sr/3TfU2wA                                       |
-| P2        | Link Port             | 2x3, 2mm spacing                 | Link Port                   | https://tinyurl.com/m3y35e3z                                 |
+| P2        | Link Port             | 2x3, 2mm spacing                 | MGB/GBC Link Port           | https://tinyurl.com/m3y35e3z                                 |
 | R19       | 220                   | 0603                             | Resistor                    | https://mou.sr/3ARwrf3                                       |
 | R20       | 220                   | 0603                             | Resistor                    | https://mou.sr/3ARwrf3                                       |
 | R21       | 220                   | 0603                             | Resistor                    | https://mou.sr/3ARwrf3                                       |
