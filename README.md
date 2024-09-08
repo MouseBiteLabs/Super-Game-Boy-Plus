@@ -8,11 +8,11 @@ The Super Game Boy (SGB) was a special cartridge for the Super Nintendo (SNES) t
 
 Unfortunately, the original Super Game Boy had one "major" flaw. The clock speed was 2.4% too fast. For most people, this makes no difference, but for *true gamers* it amounts to blasphemy. The side effect of this is that the Super Game Boy cannot use a link cable to connect with other Game Boys, since the clock speeds would be too dissimilar. Japan got the Super Game Boy 2, which fixed this oversight and added a link port. But everyone else never got it! Thus, true gamers got to work, and created mods that fix the <a href="https://www.qwertymodo.com/hardware-projects/snes/super-game-boy-clock-mod">clock speed</a> and <a href="https://www.qwertymodo.com/hardware-projects/snes/super-game-boy-link-port">add a link port</a>.
 
-Another type of mod that has cropped up over the years <a href="https://www.timeextension.com/news/2023/08/classic-pokemon-games-get-ported-to-snes-by-industrious-fan">are standalone SNES games with a single Game Boy game inside.</a> This generally includes taking the PCB out of a Super Game Boy, taking a Game Boy game (hopefully a reproduction and not an original!), and permanently soldering it to the SGB board. A bit rough, but it gets the job done.
+Another type of mod that has cropped up over the years <a href="https://www.timeextension.com/news/2023/08/classic-pokemon-games-get-ported-to-snes-by-industrious-fan">are standalone SNES games with a single Game Boy game inside.</a> This generally includes taking the PCB out of a Super Game Boy, taking the PCB out of a Game Boy game (hopefully a reproduction and not an original!), and permanently soldering the Game Boy PCB to the SGB board. A bit rough, but it gets the job done.
 
-The thing about all these different SGB mods is that they consist of boards soldered together to an original SGB board. There hasn't been a single, clean, standalone board that incorporates all these features in a nice package. Until now!
+The thing about all these different SGB mods is that they consist of boards soldered together to an original SGB board. There hasn't been a single, clean, standalone board that incorporates all these features in a nice, sturdy package. Until now!
 
-[pic of board]
+![image](https://github.com/user-attachments/assets/6aafdcf8-99e1-4d85-b303-5b412fd16936)
 
 This Super Game Boy cartridge circuit board does the following:
 
@@ -27,11 +27,11 @@ This Super Game Boy cartridge circuit board does the following:
   2) a standard 46-pin SNES shell (will require two cuts on the bottom of the shell for the extra cart edge pins), and
   3) a 60-pin SNES shell used for games that used enhancement chips like the SA-1 or SuperFX
  
-There are two versions of the Super Game Boy board - one that can be used for standalone MBC3 games, and one that can be used for standalone MBC5 games. If you only want a Super Game Boy without locking it to a single game, you can use *either* the MBC3 or MBC5 version to accomplish this - it does not matter which you pick. Because this project is highly customizable, I will provide a flowchart below to help guide you through the assembly process based on your desires. 
+There are two versions of the Super Game Boy board - one that can be used for standalone MBC3 games (in development), and one that can be used for standalone MBC5 games. If you only want a Super Game Boy without locking it to a single game, you can use *either* the MBC3 or MBC5 version to accomplish this - it does not matter which you pick. Because this project is highly customizable, you must carefully follow the instructions below to help guide you through the assembly process based on your desires. 
 
 **PLEASE READ THIS GITHUB REPOSITORY IN IT'S ENTIRETY TO ENSURE YOU ASSEMBLE THE CARTRIDGE PROPERLY.**
 
-All gerbers and source files can be found in this repo, as this project is fully open source.
+All gerbers and source files can be found in this repo in the two folders linked above, as this project is fully open source.
 
 ## Important Things Before You Start
 
