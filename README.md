@@ -61,6 +61,8 @@ Flowchart.
 
 Instructions.
 
+## How to Change Clock Speed During Gameplay
+
 ## Shell Trimming
 
 Shell trimming.
