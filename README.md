@@ -19,7 +19,7 @@ This Super Game Boy cartridge circuit board does the following:
 - Allows for three separate clock options:
   1) the original "wrong" clock speed,
   2) the correct clock speed, or
-  3) **the correct clock speed with the ability to over or underclock**
+  3) **the correct clock speed with the ability to overclock and underclock in-game**
 - Incorporates the link port onto the board using a small daughter board to offset it into a perfect location on the edge of a standard SNES cartridge (if you are using an SGB2 shell, it will fit without the daughter board)
 - Optionally allow you to lock the board to one specific Game Boy game instead of using the cartridge connector - save data can be transplanted to/from the cartridge via the FRAM chip
 - Can be used in three different SNES shells with minimal shell trimming required:
@@ -46,11 +46,20 @@ DO NOT use my circuit boards for profiting from stolen work - this especially in
 
 ## Required Equipment
 
-Equipment.
+- You will need basic tools, like a soldering iron, hot plate, and/or hot air rework station.
+- If you need the cartridge connector for an enhanced SGB build, <a href="https://hackaday.com/2017/04/03/have-you-ever-tried-desoldering-needles/">desoldering needles</a> may be helpful in removing it from the donor board.
+- If you're making a single-game SGB cartridge, you will need a method of programming the ROM and FRAM (if desired). You *cannot* program the SGB cartridge with a cart programmer, like the OSCR. You need to solder pre-programmed chips.
+  - In my opinion, the easiest way to do this if you have the equipment already is to make one of my FRAM-enabled Game Boy cartridges, and then transfer the ROM and FRAM chips over to the SGB board. You can use a variety of cart flashers, such as <a href="https://www.gbxcart.com/">GBxCart</a> and the <a href="https://github.com/sanni/cartreader">OSCR</a> to load the game and save data onto the catridge. Doing it this way, you can also test the game in a Game Boy before you move the chips over to make sure it's in working order.
+  - Alternatively, the <a href="https://xgecu.myshopify.com/products/xgecu-new-t48-tl866-3gprogrammer-v12-01-support-28000-ics-for-spi-nor-nand-flash-emmc-bga153-162-169-100-221-tsop-sop-plcc">T48 programmer</a> with the <a href="https://xgecu.myshopify.com/products/100-original-xgecu-adp_f48_ex-1-tsop48-special-adapter-for-nor-flash-only-use-on-t48-tl866-3g-programmer">TSOP48 adapter</a> can program the ROM chip.
+- If you want to add clock control options (overclocking/underclocking), you will need a way of programming an ATTINY85. My preferred method is to use an <a href="https://store-usa.arduino.cc/collections/boards-modules?filter.p.m.hardware_func.form_factor=Mega&filter.p.m.hardware_func.form_factor=Uno">Arduino Uno or Arduino Mega</a>, as I own those already. The instructions I provide will be using an Arduino to program the ATTINY. There are a multitude of other ways as well, but you will need to figure those out for yourself.
 
 ## Flowchart
 
 Flowchart.
+
+## Programming the ATTINY85 For Clock Control
+
+Instructions.
 
 ## Shell Trimming
 
