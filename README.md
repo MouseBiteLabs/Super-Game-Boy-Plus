@@ -53,15 +53,29 @@ DO NOT use my circuit boards for profiting from stolen work - this especially in
   - Alternatively, the <a href="https://xgecu.myshopify.com/products/xgecu-new-t48-tl866-3gprogrammer-v12-01-support-28000-ics-for-spi-nor-nand-flash-emmc-bga153-162-169-100-221-tsop-sop-plcc">T48 programmer</a> with the <a href="https://xgecu.myshopify.com/products/100-original-xgecu-adp_f48_ex-1-tsop48-special-adapter-for-nor-flash-only-use-on-t48-tl866-3g-programmer">TSOP48 adapter</a> can program the ROM chip.
 - If you want to add clock control options (overclocking/underclocking), you will need a way of programming an ATTINY85. My preferred method is to use an <a href="https://store-usa.arduino.cc/collections/boards-modules?filter.p.m.hardware_func.form_factor=Mega&filter.p.m.hardware_func.form_factor=Uno">Arduino Uno or Arduino Mega</a>, as I own those already. The instructions I provide will be using an Arduino to program the ATTINY. There are a multitude of other ways as well, but you will need to figure those out for yourself.
 
-## Flowchart
+## Assembly Guide
 
-Flowchart.
+To start off, here is a bird's-eye view of the process to populate one of these boards. Please follow this flowchart as you go. I *highly* recommend testing the board in a SNES after you solder the Group A components. This will help narrow down issues early on, before you start messing with things like overclocking.
 
-## Programming the ATTINY85 For Clock Control
+<p align="center">
+<img src="https://github.com/user-attachments/assets/6e62412a-c45b-475b-82bd-2eb3dc6275ab">
+</p>
 
-Instructions.
+### Step 1: Getting the Boot Screen
 
-## How to Change Clock Speed During Gameplay
+### Step 2: Choosing the Clock Type
+
+#### Fixed Clock Speed
+
+#### Clock Control With ATTINY85
+
+#### Qwertymodo's Clock Mod
+
+### Step 3: Adding a Link Port
+
+### Step 4: Adding the Game Boy Components
+
+## Game Controls
 
 ## Shell Trimming
 
@@ -95,7 +109,8 @@ A: No.
 
 ## Resources and Acknowledgements
 
-Things and people.
+- Gekkio
+- Qwertymodo
 
 ## License
 
