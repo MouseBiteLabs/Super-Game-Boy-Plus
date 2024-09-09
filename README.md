@@ -110,6 +110,8 @@ If you don't want to deal with an ATTINY85, the board is fully compatible with <
 
 Please note that if you want to add the link port, you *must* be using one of the clock options that fix the frequency (this also includes the overclocking option with the ATTINY85, as that defaults to 4.194 MHz). The link port *will not work* if your clock speed is the incorrect 4.295 MHz provided by the SNES.
 
+Pin strip housing is approximately 1.6mm thick - use link port adapter pcb as an offset for mounting
+
 ### Step 4: Adding the Game Boy Components
 
 ## Game Controls
