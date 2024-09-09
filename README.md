@@ -110,7 +110,26 @@ If you don't want to deal with an ATTINY85, the board is fully compatible with <
 
 Please note that if you want to add the link port, you *must* be using one of the clock options that fix the frequency (this also includes the overclocking option with the ATTINY85, as that defaults to 4.194 MHz). The link port *will not work* if your clock speed is the incorrect 4.295 MHz provided by the SNES.
 
-Pin strip housing is approximately 1.6mm thick - use link port adapter pcb as an offset for mounting
+Firstly, if for some reason you have a junked Japanese-only SGB2 cartridge with an in-tact shell (the blue one that has a cutout for the link port) then you only need to add the link port in the P1 socket. Again, though, the SGB2 is *not* compatible with this mod, so don't buy one as a donor, because you can't use it for parts.
+
+![image](https://github.com/user-attachments/assets/f132504c-0d3e-40bc-96d1-7714e8759746)
+
+*Image from gekkio's Game Boy Hardware Database.*
+
+If you are NOT using an SGB2 shell, which I would guess you are not then you'll need to offset the link port from the board vertically to get it to fit in the shell nicely. You will also need to cut out a hole in the SNES shell, obviously.
+
+![PXL_20240909_230033563](https://github.com/user-attachments/assets/a0dacca0-8620-4e23-83a0-5e94641303cf)
+
+Getting the link port adapter board to sit level is a bit tricky. You also need to make sure the board is placed properly, and not flipped around. The way I do it is:
+1) Solder the 2x3 headers (these have 2mm spacing instead of the standard 2.54mm spacing) into the link port adapter board. Make sure the headers are soldered onto the adapter board in such a way that it would be sandwiched between the main PCB and the adapter PCB. See the above picture for reference.
+2) Solder the 1x2 header (these have the standard 2.54mm spacing) onto the SGB board. You will also need to remove the black housing, as that is thicker than the housing on the 2x3 header (which is 1.5mm), so the board would be crooked if this was kept in. Use flush cutters or some other tool to carefully remove them without bending the pins.
+3) Optional - place the 3D printed spacer I have linked above on top of the SGB board to help level the adapter board. If you don't have a 3D printer, you can use *another* link adapter board if you get them in the 1.6mm thickness to achieve approximately the same effect.
+4) Solder the link adapter board onto the SGB board.
+5) Solder the link port onto the adapter board, making sure it's placed in the right direction.
+
+This is how it should look from the "topside" of the board. (Note that this picture does not include the 3D printed spacer.)
+
+![PXL_20240909_231635987](https://github.com/user-attachments/assets/a18228a8-9b22-4338-a48d-6bd32c1ab675)
 
 ### Step 4: Adding the Game Boy Components
 
