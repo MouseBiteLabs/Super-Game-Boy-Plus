@@ -63,15 +63,52 @@ To start off, here is a bird's-eye view of the process to populate one of these 
 
 ### Step 1: Getting the Boot Screen
 
+First, populate the entire board with the Group A components. That's the majority of them. Also, solder the CLK1 solder pads on the back of the board to enable the SNES-driven clock just for testing. When you pop it into the SNES (obviously without a Game Boy game), you should see this screen:
+
+![image](https://github.com/user-attachments/assets/c5493558-6dcc-4915-a2ab-207a86d31678)
+
+If you've got that, then you know you at least got the essentials soldered properly. If you get the Game Boy border, but no cartridge error, then you have some kind of problem somewhere on the GB-side (like the SGB CPU, the ICD2, the RAM chips, etc). If you just get a black screen, then either the cartridge might not be making good contact with the SNES cartridge connector (or the cart connector is dirty), or you have some issue with the SNES-side components like the mask ROM or the CIC (if you're using the PIC12F629, make sure the SuperCIC code is programmed properly).
+
 ### Step 2: Choosing the Clock Type
+
+If you're not planning on fixing the clock speed, and keeping it at the incorrect 4.295 MHz frequency, then you don't have to do anything else for this step. Skip ahead to Step 3! Otherwise, read on.
+
+Note that for all of these clock options, you can populate Group B and C components without causing any issues. The CLK pads on the back of the board will dictate which of these components have control over the clock generation, and they can't interfere with each other (as long as you only bridge one set of CLK pads).
 
 #### Fixed Clock Speed
 
+This is the simplest clock modification, all you have to do is solder the few Group B components, desolder CLK1, and solder bridge CLK2. This will yield the proper clock speed of 4.194 MHz.
+
 #### Clock Control With ATTINY85
+
+This one will take some work, because you will need to program the ATTINY85. You can do this before soldering, or after soldering if you use the ISP header pins. In either case, populate Group C components, desolder CLK1, and solder bridge CLK3 to set up the board for the clock generator.
+
+In this section, I will briefly walk through how to program the ATTINY85 after it is soldered to the board, through the ISP header pins, with an Arduino Mega. If you are using a different method of programming, you will have to find instructions yourself.
+
+<a href="https://www.instructables.com/How-to-Program-an-Attiny85-From-an-Arduino-Uno/">Here is detailed instructions for using an Arduino Uno to program an ATTINY85.</a> I haven't used them myself, but they look to be correct. I personally use a Mega to program my ATTINY chips; <a href="https://www.instructables.com/How-to-Burn-ATTiny85-Using-Arduino-Mega/">the detailed instructions can be found here for the Arduino Mega.</a> Follow those articles for the nitty-gritty, I will just give you the overview here that's more generic.
+
+1. Program the host Arduino to be an ISP programmer. If using the Mega, follow the instructions in the link above to change the pin definitions in the ArduinoISP code to match the Mega instead of the Uno.
+2. Put SW1 in PROG mode to allow programming of the ATTINY85.
+3. Connect the Arduino pins to the ISP header as such:
+  i. Connect ISP pin 1 (PB1, PICO on the ATTINY85) to Arduino PICO pin (50 on Mega, 12 on Uno)
+  ii. Connect ISP pin 2 (5V) to the Arduino 5V pin
+  iii. Connect ISP pin 3 (PB2, SCK on the ATTINY85) to Arduino SCK pin (52 on Mega, 13 on Uno)
+  iv. Connect ISP pin 4 (PB0, POCI on the ATTINY85) to Arduino POCI pin (51 on Mega, 11 on Uno)
+  v. Connect ISP pin 5 (RST, SS on the ATTINY85) to Arduino SS pin (53 on Mega, 10 on Uno)
+  vi. Connect ISP pin 6 (GND) to the Arduino GND pin
+4. Burn the bootloader to the ATTINY85. Make sure the processor is set to run on the internal 8 MHz clock, *not* an external clock.
+5. Upload the Arduino sketch provided above onto the ATTINY85.
+6. If it uploads correctly, unplug all the wires and switch SW1 to PLAY mode.
+
+Remember, if you put the cartridge in your SNES and get a Game Boy border but *no blinking cartridge error* then that means there's an issue with the clock. You will know you did it right if you get the blinking error screen posted above.
 
 #### Qwertymodo's Clock Mod
 
+If you don't want to deal with an ATTINY85, the board is fully compatible with <a href="https://www.qwertymodo.com/hardware-projects/snes/super-game-boy-clock-mod">qwertymodo's SGB clock mod</a>. The downside to this is that if you want to change the clock speed, you will still need to buy the Super Game Boy Commander controller from Hori... and those are *not* cheap. The main draw to qwertymodo's mod under normal circumstances is the clock speed is fixed, however since you can fix it pretty easily by soldering in the Group B components, the usefulness is a bit diminished. But in any case, it is still an option. All you have to do is follow the instructions on his site to install it, they apply to my SGB boards as well. Make sure the CLK1 pads remain bridged.
+
 ### Step 3: Adding a Link Port
+
+Please note that if you want to add the link port, you *must* be using one of the clock options that fix the frequency (this also includes the overclocking option with the ATTINY85, as that defaults to 4.194 MHz). The link port *will not work* if your clock speed is the incorrect 4.295 MHz provided by the SNES.
 
 ### Step 4: Adding the Game Boy Components
 
