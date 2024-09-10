@@ -127,8 +127,8 @@ Getting the link port adapter board to sit level is a bit tricky. You also need 
  
 2) Solder the 1x2 header (these have the standard 2.54mm spacing) onto the SGB board. You will also need to remove the black housing, as that is thicker than the housing on the 2x3 header (which is 1.5mm), so the board would be crooked if this was kept in. Use flush cutters or some other tool to carefully remove them without bending the pins.
 3) Optional - place the 3D printed spacer I have linked above on top of the SGB board to help level the adapter board. If you don't have a 3D printer, you can use *another* link adapter board as a temporary shim (if you get them in the 1.6mm thickness) to achieve approximately the same effect.
-4) Solder the link adapter board onto the SGB board.
-5) Solder the link port onto the adapter board, making sure it's placed in the right direction.
+4) With the adapter board placed on the main SGB board, finish soldering in the link adapter board.
+5) Finally, solder the link port onto the adapter board, making sure it's placed in the right direction.
 
 This is how it should look from the "topside" of the board. (Note that this picture does not include the 3D printed spacer.)
 
