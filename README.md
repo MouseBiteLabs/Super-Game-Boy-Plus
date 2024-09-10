@@ -121,7 +121,10 @@ If you are NOT using an SGB2 shell, which I would guess you are not then you'll 
 ![PXL_20240909_230033563](https://github.com/user-attachments/assets/a0dacca0-8620-4e23-83a0-5e94641303cf)
 
 Getting the link port adapter board to sit level is a bit tricky. You also need to make sure the board is placed properly, and not flipped around. The way I do it is:
-1) Solder the 2x3 headers (these have 2mm spacing instead of the standard 2.54mm spacing) into the link port adapter board. Make sure the headers are soldered onto the adapter board in such a way that it would be sandwiched between the main PCB and the adapter PCB. See the above picture for reference.
+1) Solder the 2x3 headers (these have 2mm spacing instead of the standard 2.54mm spacing) into the link port adapter board. Make sure the headers are soldered onto the adapter board in such a way that it would be sandwiched between the main PCB and the adapter PCB.
+
+![image](https://github.com/user-attachments/assets/f1d20f55-dddd-4446-8764-2213f4ebe09e)
+ 
 2) Solder the 1x2 header (these have the standard 2.54mm spacing) onto the SGB board. You will also need to remove the black housing, as that is thicker than the housing on the 2x3 header (which is 1.5mm), so the board would be crooked if this was kept in. Use flush cutters or some other tool to carefully remove them without bending the pins.
 3) Optional - place the 3D printed spacer I have linked above on top of the SGB board to help level the adapter board. If you don't have a 3D printer, you can use *another* link adapter board if you get them in the 1.6mm thickness to achieve approximately the same effect.
 4) Solder the link adapter board onto the SGB board.
@@ -130,6 +133,8 @@ Getting the link port adapter board to sit level is a bit tricky. You also need 
 This is how it should look from the "topside" of the board. (Note that this picture does not include the 3D printed spacer.)
 
 ![PXL_20240909_231635987](https://github.com/user-attachments/assets/a18228a8-9b22-4338-a48d-6bd32c1ab675)
+
+I detail shell trimming farther down.
 
 ### Step 4: Adding the Game Boy Components
 
