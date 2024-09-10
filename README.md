@@ -138,11 +138,18 @@ I detail shell trimming farther down.
 
 ### Step 4: Adding the Game Boy Components
 
-## Game Controls
+If you're planning on retaining the cartridge connector in your build, then solder in the cartridge connector now! (The only Group E component)
+
+If you're planning on locking the cartridge to a single game, then you have some more work to do. You need to program the M29F160 chip with the ROM of the game you want to make. You can do this in one of two ways:
+
+1) With a standalone programmer like the T48 or the FlashCat, or
+2) Build a Game Boy cartridge, flash the game using a cart flasher like the GBxCart or OSCR, then desolder the chips and move them over to the SGB board.
 
 ## Shell Trimming
 
 Shell trimming.
+
+## Game Controls
 
 ## FAQ
 
