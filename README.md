@@ -1,5 +1,7 @@
 # Super Game Boy Cartridge
 
+TODO: Cleanup, add links to Game Boy FRAM boards, add pictures where appropriate, add 3D files and Arduino code
+
 The Super Game Boy (SGB) was a special cartridge for the Super Nintendo (SNES) that allowed you to play original Game Boy (DMG) games on your Super Nintendo... in **living color!** Some Game Boy games can even take advantage of enhancements provided by the SGB in ways you wouldn't see on a Game Boy, including custom color palettes, enhanced audio, and screen borders. *How does that strike you??*
 
 <p align="center">
@@ -142,14 +144,39 @@ If you're planning on retaining the cartridge connector in your build, then sold
 
 If you're planning on locking the cartridge to a single game, then you have some more work to do. You need to program the M29F160 chip with the ROM of the game you want to make. You can do this in one of two ways:
 
-1) With a standalone programmer like the T48 or the FlashCat, or
-2) Build a Game Boy cartridge, flash the game using a cart flasher like the GBxCart or OSCR, then desolder the chips and move them over to the SGB board.
+1) With a standalone programmer like the <a href="https://xgecu.myshopify.com/products/xgecu-new-t48-tl866-3gprogrammer-v12-01-support-28000-ics-for-spi-nor-nand-flash-emmc-bga153-162-169-100-221-tsop-sop-plcc">T48 programmer</a> with the <a href="https://xgecu.myshopify.com/products/100-original-xgecu-adp_f48_ex-1-tsop48-special-adapter-for-nor-flash-only-use-on-t48-tl866-3g-programmer">TSOP48 adapter</a> - just place the chip in the adapter, load the ROM file in the programming software, and flash the chip
+
+OR
+
+2) Build a Game Boy cartridge that uses the M29F160 (like my boards), flash the game using a cart flasher like the <a href="https://www.gbxcart.com/">GBxCart</a> or the <a href="https://github.com/sanni/cartreader">OSCR</a>, then desolder the chips and move them over to the SGB board.
+
+The upside to #2 is that you can test the game out in an actual Game Boy before transferring the chips over, and you can flash save data onto the FRAM if you have a game already started on a different cartridge you've dumped. So personally, I use method #2 if I can.
+
+After you've programmed your ROM (and optionally FRAM) chip(s), then solder them to the board, along with the rest of the Group F components.
+
+At this point - you've completed assembly of the cartridge.
 
 ## Shell Trimming
 
 Shell trimming.
 
 ## Game Controls
+
+Since this is a Super Game Boy... probably just good to look at the <a href="https://archive.org/details/nintendo-snes-super-game-boy/mode/2up">Super Game Boy manual</a> for all the controls that go with that.
+
+Other than that - if you've installed the clock mod onto your board, this is how you control it if you use the code I provide. You only need to use the Start and Select buttons to change speeds. In the code, I have allocated space for seven different clock settings, and it starts at 1x by default (the correct 4.194 MHz clock speed). Note that each clock speed will affect the audio as well - it is not like Dodrio mode in Pokemon Stadium's GB Tower where the audio is unaffected. This means playing games can get... annoying at really high clock speeds.
+
+The default clock multiplier settings are in order: 0.5x, 0.67x, 0.85x, 1x, 1.25x, 1.5x, 2x. A clock multiplier of 3x works, but produces a lot of graphical glitches. 4x and higher becomes unstable and will freeze the game.
+
+- Speeding up: Press and hold Select first, wait a second, then also press and hold Start simultaneously (imitating a "fast forward" button)
+- Slowing down: Press and hold Start first, wait a second, then also press and hold Select simultaneously (imitating a "rewind" button)
+- Continuing to hold these two buttons down will continue up/down the list of clock multipliers in the code until it hits the maximum/minimum, with approximately a 2 second delay between switching
+
+Maybe you are playing a game that requires you to press Start and Select for a while, and you don't want to trip the clock change. In that case you can reset clock speed to 1x and *disable* changing the clock. To do this:
+
+- Press and hold both Start *and* Select at the same time and hold down for approximately 5 seconds.
+- The clock speed will automatically move back to 1x. At this point, pressing Start/Select in the manner described above will not change the clock speed.
+- To re-enable clock control, press and hold Start *and* Select at the same time and hold down for approximately 5 seconds. Then, you will be able to change clock settings based on the controls above.
 
 ## FAQ
 
