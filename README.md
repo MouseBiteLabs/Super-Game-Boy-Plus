@@ -60,7 +60,7 @@ DO NOT use my circuit boards for profiting from stolen work - this especially in
 To start off, here is a bird's-eye view of the process to populate one of these boards. Please follow this flowchart as you go. I *highly* recommend testing the board in a SNES after you solder the Group A components. This will help narrow down issues early on, before you start messing with things like overclocking.
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/6e62412a-c45b-475b-82bd-2eb3dc6275ab">
+<img src="https://github.com/user-attachments/assets/0a006cc8-b446-49cd-99d4-88b1b08b1fd6">
 </p>
 
 ### Step 1: Getting the Boot Screen
