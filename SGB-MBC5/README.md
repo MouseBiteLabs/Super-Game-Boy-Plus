@@ -4,7 +4,13 @@ This board is for the MBC5 version.
 
 ## Board Characteristics and Order Information
 
-Stuff.
+Here's a Mouser cart that has every part you would need on the circuit board, *except* the parts you must harvest from a Super Game Boy cartridge and an MBC5 Game Boy cartridge. It also does not include a link port, since you will need to get that from aftermarket sellers (check the link in the BOM). 
+
+If your Super Game Boy cartridge has damaged RAM chips (something that is unlikely, but possible), you will also need to add the RAM chips listed in the BOM.
+
+https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=6f87901e1f 
+
+If you don't need all of the component groups below, you will need to go through the cart and remove the ones you do not need. Note that the FRAM itself is >$10 at the time of writing. You can get cheaper parts from other sellers on eBay or AliExpress, but the quality is dubious, so order at your own risk.
 
 ## Bill of Materials (BOM)
 
