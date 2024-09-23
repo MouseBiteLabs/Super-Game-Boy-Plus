@@ -12,7 +12,7 @@ Adafruit_SI5351 clockgen = Adafruit_SI5351();
 
 const int base_clock_factor = 166;                                                                                    // Yields correct clock speed of 4.193 MHz with a clock_speed_factor of 1
 const int array_length = 7;                                                                                           // Set how many clock speed settings are stored
-const float clock_speed_factor[array_length] = {0.5,0.67,0.85,1,1.25,1.5,2};                                          // Array of clock dividers (lower number = faster)
+const float clock_speed_factor[array_length] = {0.5,0.67,0.8,1,1.25,1.5,2};                                           // Array of clock DIVIDERS (lower number = faster; i.e. factor of 0.5 means it's 2x faster)
 const int clock_default = 3;                                                                                          // Default speed factor setting
 int clock_selection = clock_default;                                                                                  // Default speed factor selection - remember list is 0-indexed
 int clock_speed = base_clock_factor;                                                                                  // Default clock divider factor for normal frequency
