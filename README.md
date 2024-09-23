@@ -83,7 +83,7 @@ This is the simplest clock modification, all you have to do is solder the few Gr
 
 #### Option 2: Clock Control With ATTINY85
 
-This one will take some work, because you will need to program the ATTINY85. You can do this before soldering, or after soldering if you use the ISP header pins. In either case, populate Group C components, desolder CLK1, and solder bridge CLK3 to set up the board for the clock generator.
+This one will take some work, because you will need to program the ATTINY85. <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/blob/main/SGB_Clock_Control_ATTINY.ino">You will need to program it with my custom-developed code.</a> You can do this before soldering, or after soldering if you use the ISP header pins. In either case, populate Group C components, desolder CLK1, and solder bridge CLK3 to set up the board for the clock generator.
 
 In this section, I will briefly walk through how to program the ATTINY85 after it is soldered to the board, through the ISP header pins, with an Arduino Mega. If you are using a different method of programming, you will have to find instructions yourself.
 
