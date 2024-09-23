@@ -4,7 +4,20 @@ This board is for the MBC5 version.
 
 ## Board Characteristics and Order Information
 
-Board information coming soon.
+The zipped folder contains all the gerber files for this board. The following options **must** be chosen when ordering boards for yourself.
+
+- Thickness: 1.2mm
+- Layers: 4
+- Surface Finish: ENIG
+- Gold Fingers: Yes, 30° chamfer
+
+**I sell this blank circuit board on Etsy, so you don't have to buy a bunch of multiples if you don't want to.** (Click the banner!)
+
+<a href="https://mousebitelabs.etsy.com/"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/97127539/239718536-5c9aefe3-0628-4434-b8d8-55ff80ac3bbc.png" alt="PCB from Etsy" /></a> 
+
+You can use the zipped folder at any board fabricator you like. You may also buy the board from PCBWay using this link (disclosure: I receive 10% of the sale value to go towards future PCB orders of my own):
+
+<a href="https://www.pcbway.com/"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
 
 ## Bill of Materials (BOM)
 
@@ -131,3 +144,8 @@ If you don't need all of the component groups below, you will need to go through
 | Reference | Value/Part Number     | Package             | Description             | Group | Source                                                       |
 | --------- | --------------------- | ------------------- | ----------------------- | ----- | ------------------------------------------------------------ |
 | C12       | 10pF (DNP)            | 0603                | Capacitor (MLCC)        | DNP   | https://mou.sr/3XA5J3N                                       |
+## License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. You are able to copy and redistribute the material in any medium or format, as well as remix, transform, or build upon the material for any purpose (even commercial) - but you **must** give appropriate credit, provide a link to the license, and indicate if any changes were made.
+
+©MouseBiteLabs 2024
