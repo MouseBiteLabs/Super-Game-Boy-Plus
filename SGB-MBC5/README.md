@@ -1,6 +1,6 @@
 # MBC5 Variant
 
-This board is for the MBC5 version.
+This board is the MBC5 variant, useful for making standalone MBC5-based Game Boy games for the Super Nintendo. You can *also* use this board *completely without* the Game Boy parts to make an enhanced SGB board with link port and modified clock.
 
 ## Board Characteristics and Order Information
 
