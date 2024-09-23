@@ -29,7 +29,7 @@ This Super Game Boy cartridge circuit board does the following:
   2) a standard 46-pin SNES shell (will require two cuts on the bottom of the shell for the extra cart edge pins), and
   3) a 60-pin SNES shell used for games that used enhancement chips like the SA-1 or SuperFX
  
-There are two versions of the Super Game Boy board - one that can be used for standalone MBC3 games (in development), and one that can be used for standalone MBC5 games. If you only want a Super Game Boy without locking it to a single game, you can use *either* the MBC3 or MBC5 version to accomplish this - it does not matter which you pick. Because this project is highly customizable, you must carefully follow the instructions below to help guide you through the assembly process based on your desires. 
+There are two versions of the Super Game Boy board - one that can be used for standalone <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/tree/main/SGB-MBC3">MBC3 games</a> (in development), and one that can be used for standalone <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/tree/main/SGB-MBC5">MBC5 games</a>. If you only want a Super Game Boy without locking it to a single game, you can use *either* the MBC3 or MBC5 version to accomplish this - it does not matter which you pick. Because this project is highly customizable, you must carefully follow the instructions below to help guide you through the assembly process based on your desires. 
 
 **PLEASE READ THIS GITHUB REPOSITORY IN IT'S ENTIRETY TO ENSURE YOU ASSEMBLE THE CARTRIDGE PROPERLY.**
 
@@ -98,7 +98,7 @@ In this section, I will briefly walk through how to program the ATTINY85 after i
   - Connect ISP pin 4 (PB0, POCI on the ATTINY85) to Arduino POCI pin (51 on Mega, 11 on Uno)
   - Connect ISP pin 5 (RST, SS on the ATTINY85) to Arduino SS pin (53 on Mega, 10 on Uno)
   - Connect ISP pin 6 (GND) to the Arduino GND pin
-4. Burn the bootloader to the ATTINY85. Make sure the processor is set to run on the internal 8 MHz clock, *not* an external clock.
+4. Burn the bootloader to the ATTINY85 (Tools > Burn Bootloader). Make sure the processor is set to run on the internal 8 MHz clock, *not* an external clock.
 5. Upload the Arduino sketch provided above onto the ATTINY85.
 6. If it uploads correctly, unplug all the wires and switch SW1 to PLAY mode.
 
@@ -116,7 +116,7 @@ Firstly, if for some reason you have a junked Japanese-only SGB2 cartridge with 
 
 ![image](https://github.com/user-attachments/assets/f132504c-0d3e-40bc-96d1-7714e8759746)
 
-*Image from gekkio's Game Boy Hardware Database.*
+<a href="https://gbhwdb.gekkio.fi/consoles/sgb2/">*Image from gekkio's Game Boy Hardware Database.*</a>
 
 If you are NOT using an SGB2 shell, which I would guess you are not then you'll need to offset the link port from the board vertically to get it to fit in the shell nicely. You will also need to cut out a hole in the SNES shell, obviously.
 
@@ -128,7 +128,7 @@ Getting the link port adapter board to sit level is a bit tricky. You also need 
 ![image](https://github.com/user-attachments/assets/f1d20f55-dddd-4446-8764-2213f4ebe09e)
  
 2) Solder the 1x2 header (these have the standard 2.54mm spacing) onto the SGB board. You will also need to remove the black housing, as that is thicker than the housing on the 2x3 header (which is 1.5mm), so the board would be crooked if this was kept in. Use flush cutters or some other tool to carefully remove them without bending the pins.
-3) Optional - place the 3D printed spacer I have linked above on top of the SGB board to help level the adapter board. If you don't have a 3D printer, you can use *another* link adapter board as a temporary shim (if you get them in the 1.6mm thickness) to achieve approximately the same effect.
+3) Optional - place the <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/blob/main/linkadapter_spacer.stl">3D printed spacer I have linked above</a> on top of the SGB board to help level the adapter board. If you don't have a 3D printer, you can use *another* link adapter board as a temporary shim (if you get them in the 1.6mm thickness) to achieve approximately the same effect.
 4) With the adapter board placed on the main SGB board, finish soldering in the link adapter board.
 5) Finally, solder the link port onto the adapter board, making sure it's placed in the right direction.
 
@@ -148,7 +148,7 @@ If you're planning on locking the cartridge to a single game, then you have some
 
 OR
 
-2) Build a Game Boy cartridge that uses the M29F160 (like my boards), flash the game using a cart flasher like the <a href="https://www.gbxcart.com/">GBxCart</a> or the <a href="https://github.com/sanni/cartreader">OSCR</a>, then desolder the chips and move them over to the SGB board.
+2) Build a Game Boy cartridge that uses the M29F160 <a href="https://github.com/MouseBiteLabs/Game-Boy-Cartridges/tree/main/MBC5%20(Type%20A%2C%20FRAM)">(like my boards)</a>, flash the game using a cart flasher like the <a href="https://www.gbxcart.com/">GBxCart</a> or the <a href="https://github.com/sanni/cartreader">OSCR</a>, then desolder the chips and move them over to the SGB board. Note that for my MBC5 FRAM boards, I use the same reference designators on the Game Boy boards as I do on these Super Game Boy boards, amking matching up the parts a lot easier if you're transferring them over.
 
 The upside to #2 is that you can test the game out in an actual Game Boy before transferring the chips over, and you can flash save data onto the FRAM if you have a game already started on a different cartridge you've dumped. So personally, I use method #2 if I can.
 
@@ -166,7 +166,7 @@ Since this is a Super Game Boy... probably just good to look at the <a href="htt
 
 Other than that - if you've installed the clock mod onto your board, this is how you control it if you use the code I provide. You only need to use the Start and Select buttons to change speeds. In the code, I have allocated space for seven different clock settings, and it starts at 1x by default (the correct 4.194 MHz clock speed). Note that each clock speed will affect the audio as well - it is not like Dodrio mode in Pokemon Stadium's GB Tower where the audio is unaffected. This means playing games can get... annoying at really high clock speeds.
 
-The default clock multiplier settings are in order: 0.5x, 0.67x, 0.85x, 1x, 1.25x, 1.5x, 2x. A clock multiplier of 3x works, but produces a lot of graphical glitches. 4x and higher becomes unstable and will freeze the game.
+The default clock multiplier settings are in order: 0.5x, 0.67x, 0.8x, 1x, 1.25x, 1.5x, 2x. A clock multiplier of 3x works, but produces a lot of graphical glitches. 4x and higher becomes unstable and will freeze the game.
 
 - Speeding up: Press and hold Select first, wait a second, then also press and hold Start simultaneously (imitating a "fast forward" button)
 - Slowing down: Press and hold Start first, wait a second, then also press and hold Select simultaneously (imitating a "rewind" button)
@@ -208,6 +208,7 @@ A: No.
 
 - Gekkio
 - Qwertymodo
+- Adafruit for clock control
 
 ## License
 
