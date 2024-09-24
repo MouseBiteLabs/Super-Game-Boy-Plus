@@ -52,6 +52,7 @@ DO NOT use my circuit boards for profiting from stolen work - this especially in
   - In my opinion, the easiest way to do this if you have the equipment already is to make <a href="https://github.com/MouseBiteLabs/Game-Boy-Cartridges/tree/main/MBC5%20(Type%20A%2C%20FRAM)">one of my FRAM-enabled Game Boy cartridges,</a> and then transfer the ROM and FRAM chips over to the SGB board. You can use a variety of cart flashers, such as <a href="https://www.gbxcart.com/">GBxCart</a> and the <a href="https://github.com/sanni/cartreader">OSCR</a> to load the game and save data onto the catridge. Doing it this way, you can also test the game in a Game Boy before you move the chips over to make sure it's in working order. As a bonus, all of the parts on the FRAM board are named *the same* as on the SGB board, making part transferrals even easier to manage.
   - Alternatively, the <a href="https://xgecu.myshopify.com/products/xgecu-new-t48-tl866-3gprogrammer-v12-01-support-28000-ics-for-spi-nor-nand-flash-emmc-bga153-162-169-100-221-tsop-sop-plcc">T48 programmer</a> with the <a href="https://xgecu.myshopify.com/products/100-original-xgecu-adp_f48_ex-1-tsop48-special-adapter-for-nor-flash-only-use-on-t48-tl866-3g-programmer">TSOP48 adapter</a> can program the ROM chip.
 - If you want to add clock control options (overclocking/underclocking), you will need a way of programming an ATTINY85. My preferred method is to use an <a href="https://store-usa.arduino.cc/collections/boards-modules?filter.p.m.hardware_func.form_factor=Mega&filter.p.m.hardware_func.form_factor=Uno">Arduino Uno or Arduino Mega</a>, as I own those already. The instructions I provide will be using an Arduino to program the ATTINY. There are a multitude of other ways as well, but you will need to figure those out for yourself.
+- You may need to do some shell cuts to get things to fit, like the link port. I recommend using a file set - <a href="https://www.amazon.com/gp/product/B07R3R9461">I bought this one.</a> 
 
 ## Assembly Guide
 
@@ -158,7 +159,7 @@ At this point - you've completed assembly of the cartridge electronics.
 
 ## Shell Trimming
 
-As mentioned, other than the SGB2 shell, there are three different shells this circuit board is compatible with: an original Super Game Boy shell with the cartridge connector, a standard 46-pin SNES shell, and a 60-pin SNES shell used for games that used enhancement chips like the SA-1 or SuperFX. This section will go over the (potential) shell cuts you may need for your build, depending on what features you're including and which shell you're using.
+As mentioned, other than the SGB2 shell, there are three different shells this circuit board is compatible with: an original Super Game Boy shell with the cartridge connector, a standard 46-pin SNES shell, and a 60-pin SNES shell used for games that used enhancement chips like the SA-1 or SuperFX. This section will go over the (potential) shell cuts you may need for your build, depending on what features you're including and which shell you're using. (Spoiler alert: the 60-pin shells require the fewest amount of cuts.)
 
 ### Super Game Boy Shell Trimming (for Link Port)
 
@@ -176,7 +177,7 @@ Now to cover the Link Port trimming, which will be applicable to all the shell t
 
 ### Link Port Shell Trimming
 
-If you are adding a link port, and you aren't using an SGB2 shell, you will need to do a cut on every shell to accomodate the link port. <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/blob/main/linkport_cut_guide.stl">I've created a 3D model you can 3D print in order to help line up the cut you need to make</a>; it is also linked at the top of this repository. The print sits on top of the shell and has a cutout where you can start your cut for the link port. Note that this is **only** a starting point. You will need to shave back the shell more to get it to fit. I recommend using a file set to shave away the shell; <a href="https://www.amazon.com/gp/product/B07R3R9461">I bought this one.</a> Cut the area highlighted in yellow below.
+If you are adding a link port, and you aren't using an SGB2 shell, you will need to do a cut on every shell to accomodate the link port. <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/blob/main/linkport_cut_guide.stl">I've created a 3D model you can 3D print in order to help line up the cut you need to make</a>; it is also linked at the top of this repository. The print sits on top of the shell and has a cutout where you can start your cut for the link port. Note that this is **only** a starting point. You will need to shave back the shell more to get it to fit - go slowly, be patient, or you will get ugly cuts. Cut the area highlighted in yellow below.
 
 ![image](https://github.com/user-attachments/assets/74827517-6f96-4f3c-b2c1-e7a16ec5996b)
 
@@ -212,6 +213,10 @@ Maybe you are playing a game that requires you to press Start and Select for a w
 
 ## FAQ
 
+**Q: Will these boards fit in Super Famicom shells?**
+
+A: I am pretty sure they do, but I don't have any to try out. If you're able to confirm they fit for me, please let me know, and I will update this question accordingly.
+
 **Q: Does this work with a DMG CPU instead of a SGB CPU?**
 
 A: Unfortunately, no, but it would be really nice if you could.
@@ -234,13 +239,13 @@ A: No.
 
 **Q: Can you make a board that lets you play Game Boy Color games on the SNES?**
 
-A: No.
+A: Not without FPGA wizardry, which is something I don't want to deal with.
 
 ## Resources and Acknowledgements
 
-- Gekkio
-- Qwertymodo
-- Adafruit for clock control
+- Enormous thanks to Gekkio for their Super Game Boy reverse engineering work. <a href="https://github.com/Gekkio/gb-schematics/tree/main/SGB-R-xx_SGB-N-xx">This repository</a> was the basis of this project, and he saved me hours and hours of time. He is the hero we don't deserve.
+- <a href="https://www.qwertymodo.com/">Qwertymodo</a>'s work with the clock mod and link port additions really helped me out in designing my own. Huge thanks for his findings, and all he has contributed to the gaming space!
+- Thanks to Adafruit for providing the basis of the <a href="https://learn.adafruit.com/adafruit-si5351-clock-generator-breakout/overview">clock generator circuit.</a>
 
 ## License
 
