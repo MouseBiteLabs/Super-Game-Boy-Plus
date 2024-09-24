@@ -246,6 +246,7 @@ A: Not without FPGA wizardry, which is something I don't want to deal with.
 - Enormous thanks to Gekkio for their Super Game Boy reverse engineering work. <a href="https://github.com/Gekkio/gb-schematics/tree/main/SGB-R-xx_SGB-N-xx">This repository</a> was the basis of this project, and he saved me hours and hours of time. He is the hero we don't deserve.
 - <a href="https://www.qwertymodo.com/">Qwertymodo</a>'s work with the clock mod and link port additions really helped me out in designing my own. Huge thanks for his findings, and all he has contributed to the gaming space!
 - Thanks to Adafruit for providing the basis of the <a href="https://learn.adafruit.com/adafruit-si5351-clock-generator-breakout/overview">clock generator circuit.</a>
+- Special thanks to beta tester olDirdey from discord, for providing some feedback on the link port and suggesting the 2-pin structural support header.
 
 ## License
 
