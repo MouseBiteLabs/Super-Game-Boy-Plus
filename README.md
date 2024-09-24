@@ -1,4 +1,4 @@
-# Super Game Boy Cartridge DX
+# Super Game Boy Plus
 
 The Super Game Boy (SGB) was a special cartridge for the Super Nintendo (SNES) that allowed you to play original Game Boy (DMG) games on your Super Nintendo... in **living color!** Some Game Boy games can even take advantage of enhancements provided by the SGB in ways you wouldn't see on a Game Boy, including custom color palettes, enhanced audio, and screen borders. *How does that strike you??*
 
