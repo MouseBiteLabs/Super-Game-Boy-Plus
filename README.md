@@ -1,7 +1,5 @@
 # Super Game Boy Cartridge
 
-TODO: Cleanup, add links to Game Boy FRAM boards, add pictures where appropriate, add 3D files and Arduino code
-
 The Super Game Boy (SGB) was a special cartridge for the Super Nintendo (SNES) that allowed you to play original Game Boy (DMG) games on your Super Nintendo... in **living color!** Some Game Boy games can even take advantage of enhancements provided by the SGB in ways you wouldn't see on a Game Boy, including custom color palettes, enhanced audio, and screen borders. *How does that strike you??*
 
 <p align="center">
@@ -154,11 +152,45 @@ The upside to #2 is that you can test the game out in an actual Game Boy before 
 
 After you've programmed your ROM (and optionally FRAM) chip(s), then solder them to the board, along with the rest of the Group F components.
 
-At this point - you've completed assembly of the cartridge.
+**Note: The board will not fit in a Super Game Boy shell if you have soldered in the Group F components.**
+
+At this point - you've completed assembly of the cartridge electronics.
 
 ## Shell Trimming
 
-Shell trimming.
+As mentioned, other than the SGB2 shell, there are three different shells this circuit board is compatible with: an original Super Game Boy shell with the cartridge connector, a standard 46-pin SNES shell, and a 60-pin SNES shell used for games that used enhancement chips like the SA-1 or SuperFX. This section will go over the (potential) shell cuts you may need for your build, depending on what features you're including and which shell you're using.
+
+### Super Game Boy Shell Trimming (for Link Port)
+
+Along with the trimming below for the link port, you will need to do a few minor trims on the SGB shell if you're making an enhanced SGB cartridge, that I recommend tackling first before you move onto the big trim.
+
+There's this ridge here near where the link port will be going on the back shell. This doesn't need to be an extremely clean cut.
+
+![image](https://github.com/user-attachments/assets/b47ca105-41a6-40da-af12-9609903dfe28)
+
+On the front shell, you will also need to trim off this post, as it interferes with the link port board.
+
+![image](https://github.com/user-attachments/assets/343ebc60-8e81-4dc4-8167-a96a7ef944e4)
+
+Now to cover the Link Port trimming, which will be applicable to all the shell types.
+
+### Link Port Shell Trimming
+
+If you are adding a link port, and you aren't using an SGB2 shell, you will need to do a cut on every shell to accomodate the link port. <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/blob/main/linkport_cut_guide.stl">I've created a 3D model you can 3D print in order to help line up the cut you need to make</a>; it is also linked at the top of this repository. The print sits on top of the shell and has a cutout where you can start your cut for the link port. Note that this is **only** a starting point. You will need to shave back the shell more to get it to fit. I recommend using a file set to shave away the shell; <a href="https://www.amazon.com/gp/product/B07R3R9461">I bought this one.</a> Cut the area highlighted in yellow below.
+
+![image](https://github.com/user-attachments/assets/74827517-6f96-4f3c-b2c1-e7a16ec5996b)
+
+You should also do a cut on the *top* half of the shell, where the link port will sit, to make sure it closes nicely. I don't have a guide made up for this one, since it's a pretty minor cut. Just line it up, and shave off the section.
+
+![image](https://github.com/user-attachments/assets/05beaf66-b4f6-4948-afe9-98f2618d6eef)
+
+### Standard 46-pin SNES Shell Cuts
+
+Standard SNES shells only have one cut on the bottom of the shell to allow the middle 46 cart edge pins to stick through. But the SGB boards have the extra 16 expansion pins on either end. So you'll have to cut two slots for those parts of the cart edge to stick through. The easiest way I've been able to do this is to line up the middle 46 pins, and sit the board a bit above that so you can see the plastic you'll need to cut. Then, mark the area you'll have to cut with a marker, and go over it with a file. I *highly* recommend against using flush cutters to make a starting cut, because the plastic will snap off really easily all the way towards the middle, and you'll be missing the two little nubs.
+
+![image](https://github.com/user-attachments/assets/1bbc2b1e-a284-4a2d-8b2a-e84a3a882a5d)
+
+![image](https://github.com/user-attachments/assets/20fd10d5-1b87-485e-89ae-0a075d0c2f13)
 
 ## Game Controls
 
