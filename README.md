@@ -124,11 +124,18 @@ If you are NOT using an SGB2 shell, which I would guess you are not then you'll 
 Getting the link port adapter board to sit level is a bit tricky. You also need to make sure the board is placed properly, and not flipped around. The way I do it is:
 1) Solder the 2x3 headers (these have 2mm spacing instead of the standard 2.54mm spacing) into the link port adapter board. Make sure the headers are soldered onto the adapter board in such a way that it would be sandwiched between the main PCB and the adapter PCB.
 
-![image](https://github.com/user-attachments/assets/f1d20f55-dddd-4446-8764-2213f4ebe09e)
+![image](https://github.com/user-attachments/assets/e3fe6f19-7f2b-48b6-945d-839057358254)
  
 2) Solder the 1x2 header (these have the standard 2.54mm spacing) onto the SGB board. You will also need to remove the black housing, as that is thicker than the housing on the 2x3 header (which is 1.5mm), so the board would be crooked if this was kept in. Use flush cutters or some other tool to carefully remove them without bending the pins.
+
+![image](https://github.com/user-attachments/assets/19aaf81a-c386-42d5-861d-9cf9f8437620)
+
 3) Optional - place the <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/blob/main/linkadapter_spacer.stl">3D printed spacer I have linked above</a> on top of the SGB board to help level the adapter board. If you don't have a 3D printer, you can use *another* link adapter board as a temporary shim (if you get them in the 1.6mm thickness) to achieve approximately the same effect.
-4) With the adapter board placed on the main SGB board, finish soldering in the link adapter board.
+
+4) With the adapter board placed on the main SGB board, finish soldering in the link adapter board - I like to solder the two structural headers, then flip the board over and do the remaining six pins going into the P1 socket on the SGB board. Trim down the structural header pins after you're done.
+
+![image](https://github.com/user-attachments/assets/89c7c1b5-a24d-4254-a348-baf5850d8062)
+
 5) Finally, solder the link port onto the adapter board, making sure it's placed in the right direction.
 
 This is how it should look from the "topside" of the board. (Note that this picture does not include the 3D printed spacer.)
