@@ -1,4 +1,4 @@
-# Super Game Boy Plus
+# Super Game Boy Plus (SGB+)
 
 The Super Game Boy (SGB) was a special cartridge for the Super Nintendo (SNES) that allowed you to play original Game Boy (DMG) games on your Super Nintendo... in **living color!** Some Game Boy games can even take advantage of enhancements provided by the SGB in ways you wouldn't see on a Game Boy, including custom color palettes, enhanced audio, and screen borders. *How does that strike you??*
 
@@ -14,7 +14,7 @@ The thing about all these different SGB mods is that they consist of boards sold
 
 ![image](https://github.com/user-attachments/assets/6aafdcf8-99e1-4d85-b303-5b412fd16936)
 
-This Super Game Boy cartridge circuit board does the following:
+This is the Super Game Boy Plus, or SGB+. This circuit board can do the following:
 
 - Allows for three separate clock options:
   1) the original "wrong" clock speed,
@@ -27,7 +27,7 @@ This Super Game Boy cartridge circuit board does the following:
   2) a standard 46-pin SNES shell (will require two cuts on the bottom of the shell for the extra cart edge pins), and
   3) a 60-pin SNES shell used for games that used enhancement chips like the SA-1 or SuperFX
  
-There are two versions of the Super Game Boy board - one that can be used for standalone <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/tree/main/SGB-MBC3">MBC3 games</a> (in development), and one that can be used for standalone <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/tree/main/SGB-MBC5">MBC5 games</a>. If you only want a Super Game Boy without locking it to a single game, you can use *either* the MBC3 or MBC5 version to accomplish this - it does not matter which you pick. Because this project is highly customizable, you must carefully follow the instructions below to help guide you through the assembly process based on your desires. 
+There are two versions of the Super Game Boy Plus - one that can be used for standalone <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/tree/main/SGB-MBC3">MBC3 games</a> (in development), and one that can be used for standalone <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/tree/main/SGB-MBC5">MBC5 games</a>. If you only want an enhanced Super Game Boy without locking it to a single game, you can use *either* the MBC3 or MBC5 variant - it does not matter which you pick. Because this project is highly customizable, you must carefully follow the instructions below to help guide you through the assembly process based on your desires. 
 
 **PLEASE READ THIS GITHUB REPOSITORY IN IT'S ENTIRETY TO ENSURE YOU ASSEMBLE THE CARTRIDGE PROPERLY.**
 
@@ -48,8 +48,8 @@ DO NOT use my circuit boards for profiting from stolen work - this especially in
 
 - You will need basic tools, like a soldering iron, hot plate, and/or hot air rework station.
 - If you need the cartridge connector for an enhanced SGB build, <a href="https://hackaday.com/2017/04/03/have-you-ever-tried-desoldering-needles/">desoldering needles</a> may be helpful in removing it from the donor board.
-- If you're making a single-game SGB cartridge, you will need a method of programming the ROM and FRAM (if desired). You *cannot* program the SGB cartridge with a cart programmer, like the OSCR. You need to solder pre-programmed chips.
-  - In my opinion, the easiest way to do this if you have the equipment already is to make <a href="https://github.com/MouseBiteLabs/Game-Boy-Cartridges/tree/main/MBC5%20(Type%20A%2C%20FRAM)">one of my FRAM-enabled Game Boy cartridges,</a> and then transfer the ROM and FRAM chips over to the SGB board. You can use a variety of cart flashers, such as <a href="https://www.gbxcart.com/">GBxCart</a> and the <a href="https://github.com/sanni/cartreader">OSCR</a> to load the game and save data onto the catridge. Doing it this way, you can also test the game in a Game Boy before you move the chips over to make sure it's in working order. As a bonus, all of the parts on the FRAM board are named *the same* as on the SGB board, making part transferrals even easier to manage.
+- If you're making a single-game SGB+ cartridge, you will need a method of programming the ROM and FRAM (if desired). You *cannot* program the SGB+ cartridge with a cart programmer, like the OSCR. You need to solder pre-programmed chips.
+  - In my opinion, the easiest way to do this if you have the equipment already is to make <a href="https://github.com/MouseBiteLabs/Game-Boy-Cartridges/tree/main/MBC5%20(Type%20A%2C%20FRAM)">one of my FRAM-enabled Game Boy cartridges,</a> and then transfer the ROM and FRAM chips over to the SGB board. You can use a variety of cart flashers, such as <a href="https://www.gbxcart.com/">GBxCart</a> and the <a href="https://github.com/sanni/cartreader">OSCR</a> to load the game and save data onto the catridge. Doing it this way, you can also test the game in a Game Boy before you move the chips over to make sure it's in working order. As a bonus, all of the parts on the FRAM board are named *the same* as on the SGB+ board, making part transferrals even easier to manage.
   - Alternatively, the <a href="https://xgecu.myshopify.com/products/xgecu-new-t48-tl866-3gprogrammer-v12-01-support-28000-ics-for-spi-nor-nand-flash-emmc-bga153-162-169-100-221-tsop-sop-plcc">T48 programmer</a> with the <a href="https://xgecu.myshopify.com/products/100-original-xgecu-adp_f48_ex-1-tsop48-special-adapter-for-nor-flash-only-use-on-t48-tl866-3g-programmer">TSOP48 adapter</a> can program the ROM chip.
 - If you want to add clock control options (overclocking/underclocking), you will need a way of programming an ATTINY85. My preferred method is to use an <a href="https://store-usa.arduino.cc/collections/boards-modules?filter.p.m.hardware_func.form_factor=Mega&filter.p.m.hardware_func.form_factor=Uno">Arduino Uno or Arduino Mega</a>, as I own those already. The instructions I provide will be using an Arduino to program the ATTINY. There are a multitude of other ways as well, but you will need to figure those out for yourself.
 - You may need to do some shell cuts to get things to fit, like the link port. I recommend using a file set - <a href="https://www.amazon.com/gp/product/B07R3R9461">I bought this one.</a> 
@@ -68,7 +68,7 @@ First, populate the entire board with the Group A components. That's the majorit
 
 ![image](https://github.com/user-attachments/assets/c5493558-6dcc-4915-a2ab-207a86d31678)
 
-If you've got that, then you know you at least got the essentials soldered properly. If you get the Game Boy border, but no cartridge error, then you have some kind of problem somewhere on the GB-side (like the SGB CPU, the ICD2, the RAM chips, etc). If you just get a black screen, then either the cartridge might not be making good contact with the SNES cartridge connector (or the cart connector is dirty), or you have some issue with the SNES-side components like the mask ROM or the CIC (if you're using the PIC12F629, make sure the SuperCIC code is programmed properly).
+If you've got that, then you know you at least got the essentials soldered properly. If you get the Game Boy border, but no cartridge error, then you have some kind of problem somewhere on the GB-side (like the SGB CPU, the ICD2, the RAM chips, etc). If you just get a fully black screen, then either the cartridge might not be making good contact with the SNES cartridge connector (or the cart connector is dirty), or you have some issue with the SNES-side components like the mask ROM or the CIC (if you're using the PIC12F629, make sure the SuperCIC code is programmed properly). You may also have a solder bridge *anywhere* on the board.
 
 ### Step 2: Choosing the Clock Generation Method
 
@@ -84,9 +84,9 @@ This is the simplest clock modification, all you have to do is solder the few Gr
 
 This one will take some work, because you will need to program the ATTINY85. <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/blob/main/SGB_Clock_Control_ATTINY.ino">You will need to program it with my custom-developed code.</a> You can do this before soldering, or after soldering if you use the ISP header pins. In either case, populate Group C components, desolder CLK1, and solder bridge CLK3 to set up the board for the clock generator.
 
-In this section, I will briefly walk through how to program the ATTINY85 after it is soldered to the board, through the ISP header pins, with an Arduino Mega. If you are using a different method of programming, you will have to find instructions yourself.
+I will briefly walk through how to program the ATTINY85 after it is soldered to the board, through the ISP header pins, with an Arduino Mega, but you should closely follow the guides I link. If you ask me how to program the chip, or why it isn't programming properly, my answer is going to be "read the tutorial." If you are using a different method of programming, you will have to find instructions yourself.
 
-<a href="https://www.instructables.com/How-to-Program-an-Attiny85-From-an-Arduino-Uno/">Here is detailed instructions for using an Arduino Uno to program an ATTINY85.</a> I haven't used them myself, but they look to be correct. I personally use a Mega to program my ATTINY chips; <a href="https://www.instructables.com/How-to-Burn-ATTiny85-Using-Arduino-Mega/">the detailed instructions can be found here for the Arduino Mega.</a> Follow those articles for the nitty-gritty, I will just give you the overview here that's more generic.
+<a href="https://www.instructables.com/How-to-Program-an-Attiny85-From-an-Arduino-Uno/">Here is detailed instructions for using an Arduino Uno to program an ATTINY85.</a> I haven't used them myself, but they look to be correct. I personally use a Mega to program my ATTINY chips; <a href="https://www.instructables.com/How-to-Burn-ATTiny85-Using-Arduino-Mega/">the detailed instructions can be found here for the Arduino Mega.</a> Again, it is crucial you follow these instructions closely to get it working.
 
 1. Program the host Arduino to be an ISP programmer. If using the Mega, follow the instructions in the link above to change the pin definitions in the ArduinoISP code to match the Mega instead of the Uno.
 2. Put SW1 in PROG mode to allow programming of the ATTINY85.
@@ -97,9 +97,9 @@ In this section, I will briefly walk through how to program the ATTINY85 after i
   - Connect ISP pin 4 (PB0, POCI on the ATTINY85) to Arduino POCI pin (51 on Mega, 11 on Uno)
   - Connect ISP pin 5 (RST, SS on the ATTINY85) to Arduino SS pin (53 on Mega, 10 on Uno)
   - Connect ISP pin 6 (GND) to the Arduino GND pin
-4. Burn the bootloader to the ATTINY85 (Tools > Burn Bootloader). Make sure the processor is set to run on the internal 8 MHz clock, *not* an external clock.
+4. **Burn the bootloader to the ATTINY85** (Tools > Burn Bootloader). Make sure the processor is set to run on the internal 8 MHz clock, *not* an external clock. Not burning the bootloader is a common cause of failure when people are trying to program these chips.
 5. Upload the Arduino sketch provided above onto the ATTINY85.
-6. If it uploads correctly, unplug all the wires and switch SW1 to PLAY mode.
+6. If it uploads correctly, unplug all the wires and **switch SW1 to PLAY mode.** It will not work if it remains in PROG mode.
 
 Remember, if you put the cartridge in your SNES and get a Game Boy border but *no blinking cartridge error* then that means there's an issue with the clock. You will know you did it right if you get the blinking error screen posted above.
 
@@ -121,7 +121,8 @@ If you are NOT using an SGB2 shell, which I would guess you are not then you'll 
 
 ![PXL_20240909_230033563](https://github.com/user-attachments/assets/a0dacca0-8620-4e23-83a0-5e94641303cf)
 
-Getting the link port adapter board to sit level is a bit tricky. You also need to make sure the board is placed properly, and not flipped around. The way I do it is:
+Getting the link port adapter board to sit level is a bit tricky. You also need to make sure the board is placed in the correct way, and not flipped around. The way I do it is:
+
 1) Solder the 2x3 headers (these have 2mm spacing instead of the standard 2.54mm spacing) into the link port adapter board. Make sure the headers are soldered onto the adapter board in such a way that it would be sandwiched between the main PCB and the adapter PCB.
 
 ![image](https://github.com/user-attachments/assets/e3fe6f19-7f2b-48b6-945d-839057358254)
@@ -132,11 +133,11 @@ Getting the link port adapter board to sit level is a bit tricky. You also need 
 
 3) Optional - place the <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/blob/main/linkadapter_spacer.stl">3D printed spacer I have linked above</a> on top of the SGB board to help level the adapter board. If you don't have a 3D printer, you can use *another* link adapter board as a temporary shim (if you get them in the 1.6mm thickness) to achieve approximately the same effect.
 
-4) With the adapter board placed on the main SGB board, finish soldering in the link adapter board - I like to solder the two structural headers, then flip the board over and do the remaining six pins going into the P1 socket on the SGB board. Trim down the structural header pins after you're done.
+4) With the adapter board placed on the main SGB board, finish soldering the eight pins - I like to solder the two structural headers, then flip the board over and do the remaining six pins going into the P1 socket on the SGB board. Trim down the structural header pins after you're done.
 
 ![image](https://github.com/user-attachments/assets/89c7c1b5-a24d-4254-a348-baf5850d8062)
 
-5) Finally, solder the link port onto the adapter board, making sure it's placed in the right direction.
+5) Finally, solder the link port onto the adapter board, making sure it's also placed in the right direction on the correct side of the board.
 
 This is how it should look from the "topside" of the board. (Note that this picture does not include the 3D printed spacer.)
 
@@ -154,7 +155,7 @@ If you're planning on locking the cartridge to a single game, then you have some
 
 OR
 
-2) Build a Game Boy cartridge that uses the M29F160 <a href="https://github.com/MouseBiteLabs/Game-Boy-Cartridges/tree/main/MBC5%20(Type%20A%2C%20FRAM)">(like my boards)</a>, flash the game using a cart flasher like the <a href="https://www.gbxcart.com/">GBxCart</a> or the <a href="https://github.com/sanni/cartreader">OSCR</a>, then desolder the chips and move them over to the SGB board. Note that for my MBC5 FRAM boards, I use the same reference designators on the Game Boy boards as I do on these Super Game Boy boards, amking matching up the parts a lot easier if you're transferring them over.
+2) Build a Game Boy cartridge that uses the M29F160 (like my FRAM MBC3 boards, or <a href="https://github.com/MouseBiteLabs/Game-Boy-Cartridges/tree/main/MBC5%20(Type%20A%2C%20FRAM)">FRAM MBC5 boards</a>), flash the game using a cart flasher like the <a href="https://www.gbxcart.com/">GBxCart</a> or the <a href="https://github.com/sanni/cartreader">OSCR</a>, then desolder the chips and move them over to the SGB board. Note that for my FRAM boards, I use the same reference designators on the Game Boy boards as I do on these SGB+ boards, making matching up the parts a lot easier if you're transferring them over.
 
 The upside to #2 is that you can test the game out in an actual Game Boy before transferring the chips over, and you can flash save data onto the FRAM if you have a game already started on a different cartridge you've dumped. So personally, I use method #2 if I can.
 
@@ -162,7 +163,7 @@ After you've programmed your ROM (and optionally FRAM) chip(s), then solder them
 
 **Note: The board will not fit in a Super Game Boy shell if you have soldered in the Group F components.**
 
-At this point - you've completed assembly of the cartridge electronics.
+At this point - you've completed assembly of the cartridge electronics! Test it in a SNES to make sure it works properly.
 
 ## Shell Trimming
 
@@ -180,7 +181,7 @@ On the front shell, you will also need to trim off this post, as it interferes w
 
 ![image](https://github.com/user-attachments/assets/343ebc60-8e81-4dc4-8167-a96a7ef944e4)
 
-Now to cover the Link Port trimming, which will be applicable to all the shell types.
+Now to cover the actual trimming required for letting the link port stick out, which will be applicable to all the shell types.
 
 ### Link Port Shell Trimming
 
@@ -202,7 +203,7 @@ Standard SNES shells only have one cut on the bottom of the shell to allow the m
 
 ## Game Controls
 
-Since this is a Super Game Boy... probably just good to look at the <a href="https://archive.org/details/nintendo-snes-super-game-boy/mode/2up">Super Game Boy manual</a> for all the controls that go with that.
+Since this is still a Super Game Boy... probably just good to look at the <a href="https://archive.org/details/nintendo-snes-super-game-boy/mode/2up">Super Game Boy manual</a> for all the controls that go with that.
 
 Other than that - if you've installed the clock mod onto your board, this is how you control it if you use the code I provide. You only need to use the Start and Select buttons to change speeds. In the code, I have allocated space for seven different clock settings, and it starts at 1x by default (the correct 4.194 MHz clock speed). Note that each clock speed will affect the audio as well - it is not like Dodrio mode in Pokemon Stadium's GB Tower where the audio is unaffected. This means playing games can get... annoying at really high clock speeds.
 
@@ -212,11 +213,14 @@ The default clock multiplier settings are in order: 0.5x, 0.67x, 0.8x, 1x, 1.25x
 - Slowing down: Press and hold Start first, wait a second, then also press and hold Select simultaneously (imitating a "rewind" button)
 - Continuing to hold these two buttons down will continue up/down the list of clock multipliers in the code until it hits the maximum/minimum, with approximately a 2 second delay between switching
 
-Maybe you are playing a game that requires you to press Start and Select for a while, and you don't want to trip the clock change. In that case you can reset clock speed to 1x and *disable* changing the clock. To do this:
+If you want, you can also disable the clock change function, allowing you to use the Start and Select buttons freely (though, I can't think of any game that requires you press these buttons simultaneously for longer than a few seconds). To do this:
 
 - Press and hold both Start *and* Select at the same time and hold down for approximately 5 seconds.
-- The clock speed will automatically move back to 1x. At this point, pressing Start/Select in the manner described above will not change the clock speed.
-- To re-enable clock control, press and hold Start *and* Select at the same time and hold down for approximately 5 seconds. Then, you will be able to change clock settings based on the controls above.
+- If your clock speed is something other than the 1x setting, it will be reset back to 1x.
+- At this point, you have disabled the clock change function: **pressing Start/Select will no longer change the clock speed.**
+- To re-enable clock control, press and hold Start *and* Select at the same time and hold down for approximately 5 seconds.
+
+Power cycling the SNES will also re-enable the clock control function.
 
 ## FAQ
 
