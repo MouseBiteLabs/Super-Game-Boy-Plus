@@ -49,10 +49,24 @@ DO NOT use my circuit boards for profiting from stolen work - this especially in
 - You will need basic tools, like a soldering iron, hot plate, and/or hot air rework station.
 - If you need the cartridge connector for an enhanced SGB build, <a href="https://hackaday.com/2017/04/03/have-you-ever-tried-desoldering-needles/">desoldering needles</a> may be helpful in removing it from the donor board.
 - If you're making a single-game SGB+ cartridge, you will need a method of programming the ROM and FRAM (if desired). You *cannot* program the SGB+ cartridge with a cart programmer, like the OSCR. You need to solder pre-programmed chips.
-  - In my opinion, the easiest way to do this if you have the equipment already is to make <a href="https://github.com/MouseBiteLabs/Game-Boy-Cartridges/tree/main/MBC5%20(Type%20A%2C%20FRAM)">one of my FRAM-enabled Game Boy cartridges,</a> and then transfer the ROM and FRAM chips over to the SGB board. You can use a variety of cart flashers, such as <a href="https://www.gbxcart.com/">GBxCart</a> and the <a href="https://github.com/sanni/cartreader">OSCR</a> to load the game and save data onto the catridge. Doing it this way, you can also test the game in a Game Boy before you move the chips over to make sure it's in working order. As a bonus, all of the parts on the FRAM board are named *the same* as on the SGB+ board, making part transferrals even easier to manage.
+  - In my opinion, the easiest way to do this if you have the equipment already is to make <a href="https://github.com/MouseBiteLabs/Game-Boy-Cartridges/tree/main/MBC5%20(Type%20A%2C%20FRAM)">one of my FRAM-enabled Game Boy cartridges,</a> and then transfer the ROM and FRAM chips over to the SGB+ board. You can use a variety of cart flashers, such as <a href="https://www.gbxcart.com/">GBxCart</a> and the <a href="https://github.com/sanni/cartreader">OSCR</a> to load the game and save data onto the catridge. Doing it this way, you can also test the game in a Game Boy before you move the chips over to make sure it's in working order. As a bonus, all of the parts on the FRAM board are named *the same* as on the SGB+ board, making part transferrals even easier to manage.
   - Alternatively, the <a href="https://xgecu.myshopify.com/products/xgecu-new-t48-tl866-3gprogrammer-v12-01-support-28000-ics-for-spi-nor-nand-flash-emmc-bga153-162-169-100-221-tsop-sop-plcc">T48 programmer</a> with the <a href="https://xgecu.myshopify.com/products/100-original-xgecu-adp_f48_ex-1-tsop48-special-adapter-for-nor-flash-only-use-on-t48-tl866-3g-programmer">TSOP48 adapter</a> can program the ROM chip.
 - If you want to add clock control options (overclocking/underclocking), you will need a way of programming an ATTINY85. My preferred method is to use an <a href="https://store-usa.arduino.cc/collections/boards-modules?filter.p.m.hardware_func.form_factor=Mega&filter.p.m.hardware_func.form_factor=Uno">Arduino Uno or Arduino Mega</a>, as I own those already. The instructions I provide will be using an Arduino to program the ATTINY. There are a multitude of other ways as well, but you will need to figure those out for yourself.
 - You may need to do some shell cuts to get things to fit, like the link port. I recommend using a file set - <a href="https://www.amazon.com/gp/product/B07R3R9461">I bought this one.</a> 
+
+## Parts from an Original Super Game Boy
+
+These are listed in the BOMs in the MBC3 and MBC5 folders, but for quick reference, you will need:
+
+1) Super Game Boy CPU
+2) ICD2 Interface chip
+3) SNES Mask ROM (bottom right chip)
+
+These parts are salvagable from the SGB (recommended), but there are alternate options listed in the BOM:
+1) 2x SRAM
+2) CIC Region Lockout (the 18-pin device in the middle)
+
+![PXL_20240821_180204717 MP2](https://github.com/user-attachments/assets/3f47477e-b35d-4007-88cd-dedb6e9b69f0)
 
 ## Assembly Guide
 
@@ -105,7 +119,7 @@ Remember, if you put the cartridge in your SNES and get a Game Boy border but *n
 
 #### Option 3: Qwertymodo's Clock Mod
 
-If you don't want to deal with an ATTINY85, the board is fully compatible with <a href="https://www.qwertymodo.com/hardware-projects/snes/super-game-boy-clock-mod">qwertymodo's SGB clock mod</a>. The downside to this is that if you want to change the clock speed, you will still need to buy the Super Game Boy Commander controller from Hori... and those are *not* cheap. The main draw to qwertymodo's mod under normal circumstances is the clock speed is fixed, however since you can fix it pretty easily by soldering in the Group B components, the usefulness is a bit diminished. But in any case, it is still an option. All you have to do is follow the instructions on his site to install it, they apply to my SGB boards as well. Make sure the CLK1 pads remain bridged.
+If you don't want to deal with an ATTINY85, the board is fully compatible with <a href="https://www.qwertymodo.com/hardware-projects/snes/super-game-boy-clock-mod">qwertymodo's SGB clock mod</a>. The downside to this is that if you want to change the clock speed, you will still need to buy the Super Game Boy Commander controller from Hori... and those are *not* cheap. The main draw to qwertymodo's mod under normal circumstances is the clock speed is fixed, however since you can fix it pretty easily by soldering in the Group B components, the usefulness is a bit diminished. But in any case, it is still an option. All you have to do is follow the instructions on his site to install it, they apply to my SGB+ boards as well. Make sure the CLK1 pads remain bridged.
 
 ### Step 3: Adding a Link Port
 
@@ -127,13 +141,13 @@ Getting the link port adapter board to sit level is a bit tricky. You also need 
 
 ![image](https://github.com/user-attachments/assets/e3fe6f19-7f2b-48b6-945d-839057358254)
  
-2) Solder the 1x2 header (these have the standard 2.54mm spacing) onto the SGB board. You will also need to remove the black housing, as that is thicker than the housing on the 2x3 header (which is 1.5mm), so the board would be crooked if this was kept in. Use flush cutters or some other tool to carefully remove them without bending the pins.
+2) Solder the 1x2 header (these have the standard 2.54mm spacing) onto the SGB+ board. You will also need to remove the black housing, as that is thicker than the housing on the 2x3 header (which is 1.5mm), so the board would be crooked if this was kept in. Use flush cutters or some other tool to carefully remove them without bending the pins.
 
 ![image](https://github.com/user-attachments/assets/19aaf81a-c386-42d5-861d-9cf9f8437620)
 
-3) Optional - place the <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/blob/main/linkadapter_spacer.stl">3D printed spacer I have linked above</a> on top of the SGB board to help level the adapter board. If you don't have a 3D printer, you can use *another* link adapter board as a temporary shim (if you get them in the 1.6mm thickness) to achieve approximately the same effect.
+3) Optional - place the <a href="https://github.com/MouseBiteLabs/Super-Game-Boy-Cartridge/blob/main/linkadapter_spacer.stl">3D printed spacer I have linked above</a> on top of the SGB+ board to help level the adapter board. If you don't have a 3D printer, you can use *another* link adapter board as a temporary shim (if you get them in the 1.6mm thickness) to achieve approximately the same effect.
 
-4) With the adapter board placed on the main SGB board, finish soldering the eight pins - I like to solder the two structural headers, then flip the board over and do the remaining six pins going into the P1 socket on the SGB board. Trim down the structural header pins after you're done.
+4) With the adapter board placed on the main SGB+ board, finish soldering the eight pins - I like to solder the two structural headers, then flip the board over and do the remaining six pins going into the P1 socket on the SGB+ board. Trim down the structural header pins after you're done.
 
 ![image](https://github.com/user-attachments/assets/89c7c1b5-a24d-4254-a348-baf5850d8062)
 
@@ -147,7 +161,9 @@ I detail shell trimming farther down.
 
 ### Step 4: Adding the Game Boy Components
 
-If you're planning on retaining the cartridge connector in your build, then solder in the cartridge connector now! (The only Group E component)
+If you're planning on retaining the cartridge connector in your build, then solder in the cartridge connector now! I recommend taking the time to clean it out with some isopropyl alcohol to get better contact with Game Boy carts, since you've got it outside the shell anyway. Then, you're done! (This is the only Group E component)
+
+![image](https://github.com/user-attachments/assets/ed463b38-27a2-4f79-9e8a-666417f5bd13)
 
 If you're planning on locking the cartridge to a single game, then you have some more work to do. You need to program the M29F160 chip with the ROM of the game you want to make. You can do this in one of two ways:
 
@@ -155,13 +171,17 @@ If you're planning on locking the cartridge to a single game, then you have some
 
 OR
 
-2) Build a Game Boy cartridge that uses the M29F160 (like my FRAM MBC3 boards, or <a href="https://github.com/MouseBiteLabs/Game-Boy-Cartridges/tree/main/MBC5%20(Type%20A%2C%20FRAM)">FRAM MBC5 boards</a>), flash the game using a cart flasher like the <a href="https://www.gbxcart.com/">GBxCart</a> or the <a href="https://github.com/sanni/cartreader">OSCR</a>, then desolder the chips and move them over to the SGB board. Note that for my FRAM boards, I use the same reference designators on the Game Boy boards as I do on these SGB+ boards, making matching up the parts a lot easier if you're transferring them over.
+2) Build a Game Boy cartridge that uses the M29F160 (like my FRAM MBC3 boards, or <a href="https://github.com/MouseBiteLabs/Game-Boy-Cartridges/tree/main/MBC5%20(Type%20A%2C%20FRAM)">FRAM MBC5 boards</a>), flash the game using a cart flasher like the <a href="https://www.gbxcart.com/">GBxCart</a> or the <a href="https://github.com/sanni/cartreader">OSCR</a>, then desolder the chips and move them over to the SGB+ board. Note that for my FRAM boards, I use the same reference designators on the Game Boy boards as I do on these SGB+ boards, making matching up the parts a lot easier if you're transferring them over. *(Note: the following picture is an old design where the reference designators are different. Ignore it!)*
+
+![image](https://github.com/user-attachments/assets/95740c9d-27fb-4f3e-82fa-569b67bd332b)
 
 The upside to #2 is that you can test the game out in an actual Game Boy before transferring the chips over, and you can flash save data onto the FRAM if you have a game already started on a different cartridge you've dumped. So personally, I use method #2 if I can.
 
 After you've programmed your ROM (and optionally FRAM) chip(s), then solder them to the board, along with the rest of the Group F components.
 
 **Note: The board will not fit in a Super Game Boy shell if you have soldered in the Group F components.**
+
+![image](https://github.com/user-attachments/assets/3b576e60-bfdf-4e0b-891d-8fbc0d9b178e)
 
 At this point - you've completed assembly of the cartridge electronics! Test it in a SNES to make sure it works properly.
 
@@ -195,7 +215,7 @@ You should also do a cut on the *top* half of the shell, where the link port wil
 
 ### Standard 46-pin SNES Shell Cuts
 
-Standard SNES shells only have one cut on the bottom of the shell to allow the middle 46 cart edge pins to stick through. But the SGB boards have the extra 16 expansion pins on either end. So you'll have to cut two slots for those parts of the cart edge to stick through. The easiest way I've been able to do this is to line up the middle 46 pins, and sit the board a bit above that so you can see the plastic you'll need to cut. Then, mark the area you'll have to cut with a marker, and go over it with a file. I *highly* recommend against using flush cutters to make a starting cut, because the plastic will snap off really easily all the way towards the middle, and you'll be missing the two little nubs.
+Standard SNES shells only have one cut on the bottom of the shell to allow the middle 46 cart edge pins to stick through. But the Super Game Boy uses the extra 16 expansion pins on either end. So you'll have to cut two slots for those parts of the cart edge to stick through. The easiest way I've been able to do this is to line up the middle 46 pins, and sit the board a bit above that so you can see the plastic you'll need to cut. Then, mark the area you'll have to cut with a marker, and go over it with a file. I *highly* recommend against using flush cutters to make a starting cut, because the plastic will snap off really easily all the way towards the middle, and you'll be missing the two little nubs.
 
 ![image](https://github.com/user-attachments/assets/1bbc2b1e-a284-4a2d-8b2a-e84a3a882a5d)
 
@@ -212,6 +232,10 @@ The default clock multiplier settings are in order: 0.5x, 0.67x, 0.8x, 1x, 1.25x
 - Speeding up: Press and hold Select first, wait a second, then also press and hold Start simultaneously (imitating a "fast forward" button)
 - Slowing down: Press and hold Start first, wait a second, then also press and hold Select simultaneously (imitating a "rewind" button)
 - Continuing to hold these two buttons down will continue up/down the list of clock multipliers in the code until it hits the maximum/minimum, with approximately a 2 second delay between switching
+
+![image](https://github.com/user-attachments/assets/b45feba8-6ad3-436e-8725-8dea18acaaf5)
+
+![image](https://github.com/user-attachments/assets/c268775f-0e68-40ff-a1e7-a5c57f9470c0)
 
 If you want, you can also disable the clock change function, allowing you to use the Start and Select buttons freely (though, I can't think of any game that requires you press these buttons simultaneously for longer than a few seconds). To do this:
 
