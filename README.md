@@ -102,6 +102,10 @@ I will briefly walk through how to program the ATTINY85 after it is soldered to 
 
 <a href="https://www.instructables.com/How-to-Program-an-Attiny85-From-an-Arduino-Uno/">Here is detailed instructions for using an Arduino Uno to program an ATTINY85.</a> I haven't used them myself, but they look to be correct. I personally use a Mega to program my ATTINY chips; <a href="https://www.instructables.com/How-to-Burn-ATTiny85-Using-Arduino-Mega/">the detailed instructions can be found here for the Arduino Mega.</a> Again, it is crucial you follow these instructions closely to get it working.
 
+One thing I have done differently than these tutorials in the first steps is the choice of ATTINY core, which you need to communicate with the ATTINY through the Arduino IDE. I use ATTinyCore by SpenceKonde, <a href="https://github.com/SpenceKonde/ATTinyCore">which you can find here</a>. I recommend using this one instead.
+
+Anyway, here's a general guideline for programming the chip:
+
 1. Program the host Arduino to be an ISP programmer. If using the Mega, follow the instructions in the link above to change the pin definitions in the ArduinoISP code to match the Mega instead of the Uno.
 2. Put SW1 in PROG mode to allow programming of the ATTINY85.
 3. Connect the Arduino pins to the ISP header as such:
@@ -112,7 +116,10 @@ I will briefly walk through how to program the ATTINY85 after it is soldered to 
   - Connect ISP pin 5 (RST, SS on the ATTINY85) to Arduino SS pin (53 on Mega, 10 on Uno)
   - Connect ISP pin 6 (GND) to the Arduino GND pin
 4. **Burn the bootloader to the ATTINY85** (Tools > Burn Bootloader). Make sure the processor is set to run on the internal 8 MHz clock, *not* an external clock. Not burning the bootloader is a common cause of failure when people are trying to program these chips.
-5. Upload the Arduino sketch provided above onto the ATTINY85.
+5. Upload the Arduino sketch provided above onto the ATTINY85. When programming the ATTINY, my drop down menu looks like this:
+
+![image](https://github.com/user-attachments/assets/c64c1680-a88a-4e1c-90d1-7fb7894cfdf8)
+
 6. If it uploads correctly, unplug all the wires and **switch SW1 to PLAY mode.** It will not work if it remains in PROG mode.
 
 Remember, if you put the cartridge in your SNES and get a Game Boy border but *no blinking cartridge error* then that means there's an issue with the clock. You will know you did it right if you get the blinking error screen posted above.
