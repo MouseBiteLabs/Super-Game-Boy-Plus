@@ -138,7 +138,7 @@ Firstly, if for some reason you have a junked Japanese-only SGB2 cartridge with 
 
 <a href="https://gbhwdb.gekkio.fi/consoles/sgb2/">*Image from gekkio's Game Boy Hardware Database.*</a>
 
-If you are NOT using an SGB2 shell, which I would guess you are not then you'll need to offset the link port from the board vertically to get it to fit in the shell nicely. You will also need to cut out a hole in the SNES shell, obviously.
+If you are NOT using an SGB2 shell, which I would guess you are not then you'll need to offset the link port from the board vertically to get it to fit in the shell nicely. You will also need to cut out a hole in the SNES shell, obviously. **PLEASE NOTE: This method will NOT work for Super Famicom or PAL region Super Game Boy cartridges - only for North American SGBs.**
 
 ![PXL_20240909_230033563](https://github.com/user-attachments/assets/a0dacca0-8620-4e23-83a0-5e94641303cf)
 
