@@ -2,6 +2,8 @@
 
 Use this board to center the link port properly in SNES shells that *aren't* the SGB2.
 
+NOTE: This only works on the North American Super Game Boy shell. It will not fit in a Super Famicom or PAL region SGB.
+
 ## Board Characteristics and Order Information
 
 The zipped folder contains all the gerber files for this board. The board characteristics don't really matter a whole lot, but I would err on the thicker side for support purposes.
