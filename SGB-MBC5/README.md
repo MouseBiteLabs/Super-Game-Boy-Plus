@@ -125,7 +125,7 @@ If you don't need all of the component groups below, you will need to go through
 | R27       | 10k                   | 0603                             | Resistor                    | https://mou.sr/3riR7IH                                       |
 
 ### Group E Components (For an Enhanced SGB Board)
-| Reference | Value/Part Numbe  r     | Package                          | Description                 | Source                                                       |
+| Reference | Value/Part Number       | Package                          | Description                 | Source                                                       |
 | --------- | ----------------------- | -------------------------------- | --------------------------- | ------------------------------------------------------------ |
 | P1        | Game Boy Cart Connector | N/A                              | SGB Game Boy Cart Connector | Donor Super Game Boy                                         |
 
