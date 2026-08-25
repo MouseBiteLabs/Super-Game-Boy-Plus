@@ -11,15 +11,23 @@ The zipped folder contains all the gerber files for this board. The following op
 - Surface Finish: ENIG
 - Gold Fingers: Yes, 30° chamfer
 
-**I sell this blank circuit board on Etsy, so you don't have to buy a bunch of multiples if you don't want to.** (Click the banner!)
-
-<a href="https://mousebitelabs.etsy.com/listing/1837439505"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/97127539/239718536-5c9aefe3-0628-4434-b8d8-55ff80ac3bbc.png" alt="PCB from Etsy" /></a> 
-
 You can use the zipped folder at any board fabricator you like. You may also buy the board from PCBWay using this link (disclosure: I receive 10% of the sale value to go towards future PCB orders of my own):
 
 <a href="https://www.pcbway.com/project/shareproject/Super_Game_Boy_Plus_2783d5a1.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
 
 **PLEASE NOTE: I have not ordered these from PCBWay, so I cannot attest to their quality or performance. I have put the order details in as I believe they should be, but you need to review all parameters before ordering. Order at your own risk.**
+
+### Purchase from My Website
+
+You can purchase this circuit board at my website, [https://mousebitelabs.store](https://mousebitelabs.store). Click the following image to be directed to the specific item listing:
+
+<a href="https://mousebitelabs.store/products/super-game-boy-plus-circuit-board-mbc5"><img width="1070" height="182" alt="PCB from MouseBiteLabs" src="https://github.com/user-attachments/assets/14072b8c-4d47-434b-9c31-6d4ec74a28bc" /></a>
+
+### Purchase from Etsy
+
+I also offer the board on Etsy, if you would rather purchase through there - click the banner to be redirected.
+
+<a href="https://mousebitelabs.etsy.com/listing/1837439505"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/97127539/239718536-5c9aefe3-0628-4434-b8d8-55ff80ac3bbc.png" alt="PCB from Etsy" /></a> 
 
 ## Bill of Materials (BOM)
 
